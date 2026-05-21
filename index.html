@@ -1,0 +1,1832 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arsalan Ali – Performance Marketer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      :root {
+        --sky: #0081fb;
+        --sky-dark: #006fd6;
+        --sky-light: #e8f3ff;
+        --sky-mid: #3d9dfc;
+        --white: #ffffff;
+        --off: #f7f9fc;
+        --text: #0d1117;
+        --muted: #5a6472;
+        --border: #e2e8f0;
+        --card-shadow: 0 2px 16px rgba(0, 129, 251, 0.08);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        color: var(--text);
+        background: var(--white);
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: "Bricolage Grotesque", sans-serif;
+        line-height: 1.2;
+      }
+
+      /* NAV */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        padding: 0 2rem;
+      }
+
+      .nav-inner {
+        max-width: 1140px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 68px;
+      }
+
+      .nav-logo {
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--sky);
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--muted);
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover {
+        color: var(--sky);
+      }
+
+      .nav-cta {
+        background: var(--sky);
+        color: #fff !important;
+        padding: 0.5rem 1.25rem;
+        border-radius: 50px;
+        font-weight: 600 !important;
+        font-size: 0.88rem !important;
+        transition: background 0.2s !important;
+      }
+
+      .nav-cta:hover {
+        background: var(--sky-dark) !important;
+        color: #fff !important;
+      }
+
+      /* HERO */
+      .hero {
+        padding: 6rem 2rem 4rem;
+        max-width: 1140px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .hero-tag {
+        display: inline-block;
+        background: var(--sky-light);
+        color: var(--sky);
+        font-size: 0.82rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 0.35rem 1rem;
+        border-radius: 50px;
+        margin-bottom: 1.25rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        color: var(--text);
+        margin-bottom: 1.25rem;
+        line-height: 1.15;
+      }
+
+      .hero h1 span {
+        color: var(--sky);
+      }
+
+      .hero-sub {
+        font-size: 1.05rem;
+        color: var(--muted);
+        margin-bottom: 2rem;
+        max-width: 520px;
+      }
+
+      .hero-btns {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        background: var(--sky);
+        color: #fff;
+        padding: 0.75rem 1.75rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .btn-primary:hover {
+        background: var(--sky-dark);
+        transform: translateY(-1px);
+      }
+
+      .btn-outline {
+        border: 2px solid var(--sky);
+        color: var(--sky);
+        padding: 0.75rem 1.75rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .btn-outline:hover {
+        background: var(--sky-light);
+      }
+
+      .stats-row {
+        display: flex;
+        gap: 2.5rem;
+        margin-top: 3rem;
+        flex-wrap: wrap;
+      }
+
+      .stat-item {
+      }
+
+      .stat-num {
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--sky);
+        line-height: 1;
+      }
+
+      .stat-label {
+        font-size: 0.82rem;
+        color: var(--muted);
+        font-weight: 500;
+        margin-top: 0.2rem;
+      }
+
+      /* Hero image card */
+      .hero-card {
+        position: relative;
+      }
+
+      .hero-img-wrap {
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+        background: linear-gradient(135deg, var(--sky-light) 0%, #dbeeff 100%);
+        aspect-ratio: 4/5;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+      }
+
+      .hero-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+
+      .hero-img-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--sky);
+        gap: 1rem;
+      }
+
+      .hero-img-placeholder i {
+        font-size: 5rem;
+        opacity: 0.3;
+      }
+
+      .hero-badge {
+        position: absolute;
+        bottom: -1rem;
+        left: -1rem;
+        background: var(--white);
+        border-radius: 16px;
+        padding: 1rem 1.25rem;
+        box-shadow: var(--card-shadow);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.88rem;
+      }
+
+      .hero-badge .dot {
+        width: 10px;
+        height: 10px;
+        background: #22c55e;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      .hero-badge strong {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--sky);
+        display: block;
+        line-height: 1;
+      }
+
+      /* SECTION GENERAL */
+      section {
+        padding: 5rem 2rem;
+      }
+
+      .section-inner {
+        max-width: 1140px;
+        margin: auto;
+      }
+
+      .section-label {
+        font-size: 0.82rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--sky);
+        margin-bottom: 0.75rem;
+      }
+
+      .section-title {
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        font-weight: 800;
+        margin-bottom: 1rem;
+      }
+
+      .section-sub {
+        color: var(--muted);
+        font-size: 1.05rem;
+        max-width: 560px;
+      }
+
+      /* PROBLEMS */
+      .problems {
+        background: var(--off);
+      }
+
+      .problems-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+
+      .problem-card {
+        background: var(--white);
+        border-radius: 16px;
+        padding: 1.75rem;
+        border: 1px solid var(--border);
+        transition: box-shadow 0.2s;
+      }
+
+      .problem-card:hover {
+        box-shadow: var(--card-shadow);
+      }
+
+      .problem-icon {
+        width: 44px;
+        height: 44px;
+        background: #fff0f0;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #ef4444;
+      }
+
+      .problem-card h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 0.4rem;
+      }
+
+      .problem-card p {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      /* SOLUTION */
+      .solution-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+
+      .solution-card {
+        background: var(--white);
+        border-radius: 16px;
+        padding: 1.75rem;
+        border: 1px solid var(--border);
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+      }
+
+      .solution-card:hover {
+        border-color: var(--sky);
+        box-shadow: 0 4px 24px rgba(0, 129, 251, 0.12);
+      }
+
+      .solution-icon {
+        width: 44px;
+        height: 44px;
+        background: var(--sky-light);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: var(--sky);
+      }
+
+      .solution-card h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 0.4rem;
+      }
+      .solution-card p {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      /* SKILLS */
+      .skills {
+        background: var(--off);
+      }
+
+      .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 2.5rem;
+      }
+
+      .skill-pill {
+        background: var(--white);
+        border: 1.5px solid var(--border);
+        border-radius: 50px;
+        padding: 0.55rem 1.25rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text);
+        transition: all 0.2s;
+        cursor: default;
+      }
+
+      .skill-pill:hover {
+        border-color: var(--sky);
+        color: var(--sky);
+        background: var(--sky-light);
+      }
+
+      /* CASE STUDIES */
+      .case-studies {
+      }
+
+      .case-grid {
+        display: grid;
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .case-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 2.5rem;
+        transition: box-shadow 0.2s;
+      }
+
+      .case-card:hover {
+        box-shadow: 0 6px 32px rgba(0, 129, 251, 0.1);
+      }
+
+      .case-num {
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--sky);
+        background: var(--sky-light);
+        display: inline-block;
+        padding: 0.3rem 0.9rem;
+        border-radius: 50px;
+        margin-bottom: 1.25rem;
+      }
+
+      .case-card h3 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 0.4rem;
+      }
+
+      .case-tag {
+        font-size: 0.82rem;
+        color: var(--muted);
+        margin-bottom: 1.5rem;
+      }
+
+      .case-section {
+        margin-bottom: 1.5rem;
+      }
+
+      .case-section-label {
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        margin-bottom: 0.6rem;
+      }
+
+      .case-section p,
+      .case-section ul {
+        font-size: 0.95rem;
+        color: #3d4754;
+      }
+      .case-section ul {
+        padding-left: 1.25rem;
+      }
+      .case-section ul li {
+        margin-bottom: 0.3rem;
+      }
+
+      .results-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+        padding: 1.5rem;
+        background: var(--sky-light);
+        border-radius: 14px;
+      }
+
+      .result-item {
+        text-align: center;
+      }
+
+      .result-num {
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--sky);
+        line-height: 1;
+      }
+
+      .result-label {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-weight: 500;
+        margin-top: 0.25rem;
+      }
+
+      /* EXPERIENCE */
+      .experience {
+        background: var(--off);
+      }
+
+      .exp-list {
+        display: grid;
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+
+      .exp-card {
+        background: var(--white);
+        border-radius: 16px;
+        padding: 2rem;
+        border: 1px solid var(--border);
+      }
+
+      .exp-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 0.5rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .exp-title {
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+
+      .exp-company {
+        color: var(--sky);
+      }
+
+      .exp-date {
+        font-size: 0.82rem;
+        color: var(--muted);
+        background: var(--off);
+        padding: 0.3rem 0.75rem;
+        border-radius: 50px;
+        white-space: nowrap;
+      }
+
+      .exp-card ul {
+        margin-top: 1rem;
+        padding-left: 1.25rem;
+      }
+
+      .exp-card ul li {
+        font-size: 0.93rem;
+        color: #3d4754;
+        margin-bottom: 0.4rem;
+      }
+
+      /* ABOUT */
+      .about-inner {
+        display: grid;
+        grid-template-columns: 340px 1fr;
+        gap: 4rem;
+        align-items: center;
+        max-width: 1140px;
+        margin: auto;
+      }
+
+      .about-img-wrap {
+        border-radius: 20px;
+        overflow: hidden;
+        aspect-ratio: 3/4;
+        background: var(--sky-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .about-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+
+      .about-img-wrap .placeholder-icon {
+        font-size: 5rem;
+        color: var(--sky);
+        opacity: 0.25;
+      }
+
+      .about-content .section-title {
+        margin-bottom: 1.25rem;
+      }
+      .about-content p {
+        color: var(--muted);
+        margin-bottom: 1.5rem;
+        line-height: 1.75;
+      }
+
+      .about-stats {
+        display: flex;
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+
+      .socials {
+        display: flex;
+        gap: 0.75rem;
+        margin-top: 2rem;
+      }
+
+      .social-btn {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 1.5px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        color: var(--muted);
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+
+      .social-btn:hover {
+        border-color: var(--sky);
+        color: var(--sky);
+        background: var(--sky-light);
+      }
+
+      /* CONTACT */
+      .contact {
+        background: var(--sky);
+        color: #fff;
+      }
+
+      .contact .section-label {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .contact .section-title {
+        color: #fff;
+      }
+      .contact .section-sub {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-top: 3rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1.75rem;
+      }
+
+      .contact-icon {
+        width: 44px;
+        height: 44px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        color: #fff;
+        flex-shrink: 0;
+      }
+
+      .contact-info-label {
+        font-size: 0.78rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        opacity: 0.7;
+        margin-bottom: 0.25rem;
+      }
+
+      .contact-info-val {
+        font-weight: 500;
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+
+      .contact-info-val:hover {
+        opacity: 0.8;
+      }
+
+      /* FORM */
+      .contact-form {
+      }
+
+      .form-group {
+        margin-bottom: 1.25rem;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 0.82rem;
+        font-weight: 600;
+        margin-bottom: 0.4rem;
+        opacity: 0.85;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border-radius: 10px;
+        border: 1.5px solid rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.93rem;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+
+      .form-group input::placeholder,
+      .form-group textarea::placeholder {
+        color: rgba(255, 255, 255, 0.45);
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        border-color: rgba(255, 255, 255, 0.7);
+      }
+
+      .form-group select option {
+        color: var(--text);
+        background: #fff;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .btn-white {
+        background: #fff;
+        color: var(--sky);
+        padding: 0.85rem 2rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 0.5rem;
+        transition: all 0.2s;
+        font-family: "DM Sans", sans-serif;
+      }
+
+      .btn-white:hover {
+        background: #e8f3ff;
+        transform: translateY(-1px);
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--text);
+        color: rgba(255, 255, 255, 0.6);
+        padding: 3rem 2rem;
+        text-align: center;
+        font-size: 0.88rem;
+      }
+
+      footer a {
+        color: var(--sky-mid);
+        text-decoration: none;
+      }
+
+      .footer-inner {
+        max-width: 1140px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .footer-logo {
+        font-family: "Bricolage Grotesque", sans-serif;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      .footer-socials {
+        display: flex;
+        gap: 1rem;
+      }
+      .footer-socials a {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 1.1rem;
+        transition: color 0.2s;
+      }
+      .footer-socials a:hover {
+        color: var(--sky-mid);
+      }
+
+      /* DIVIDER */
+      .divider {
+        height: 1px;
+        background: var(--border);
+        max-width: 1140px;
+        margin: 0 auto;
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+          padding: 4rem 1.5rem 3rem;
+        }
+        .hero-card {
+          max-width: 360px;
+        }
+        .about-inner {
+          grid-template-columns: 1fr;
+        }
+        .about-img-wrap {
+          max-width: 300px;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .nav-links {
+          display: none;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+        .stats-row {
+          gap: 1.5rem;
+        }
+        section {
+          padding: 3.5rem 1.25rem;
+        }
+      }
+
+      /* Animate on scroll */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-up {
+        animation: fadeUp 0.6s ease both;
+      }
+
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+      .delay-3 {
+        animation-delay: 0.3s;
+      }
+      .delay-4 {
+        animation-delay: 0.4s;
+      }
+
+      /* CASE STUDY IMAGES */
+      .image1,
+      .image2,
+      .image3 {
+        width: 100%;
+        max-width: 100%;
+        margin: 2rem 0;
+        border-radius: 16px;
+        overflow: hidden;
+      }
+
+      .image1 img,
+      .image2 img,
+      .image3 img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+      }
+
+      @media (max-width: 900px) {
+        .image1,
+        .image2,
+        .image3 {
+          margin: 1.5rem 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <div class="nav-inner">
+        <a class="nav-logo" href="#">Arsalan Ali</a>
+        <ul class="nav-links">
+          <li><a href="#problems">Problems</a></li>
+          <li><a href="#solution">Solution</a></li>
+          <li><a href="#case-studies">Case Studies</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="section-inner">
+      <div class="hero fade-up">
+        <div class="hero-text">
+          <div class="hero-tag">Performance Marketer · Karachi, Pakistan</div>
+          <h1>
+            Scale Your <span>eCommerce Brand</span> in 90 Days with Data-Driven
+            Performance Marketing
+          </h1>
+          <p class="hero-sub">
+            I help eCommerce brands turn Meta Ads into a predictable growth
+            engine using structured testing, high-converting creatives, and
+            data-driven scaling strategies.
+          </p>
+          <div class="hero-btns">
+            <a
+              href="https://wa.me/923104989720"
+              target="_blank"
+              class="btn-primary"
+              ><i class="fa-brands fa-whatsapp"></i> Book a Free Call</a
+            >
+            <a href="#case-studies" class="btn-outline">View Case Studies</a>
+          </div>
+          <div class="stats-row">
+            <div class="stat-item">
+              <div class="stat-num">$100K+</div>
+              <div class="stat-label">Ad Spend Managed</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">150%</div>
+              <div class="stat-label">Average ROAS Growth</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">14+</div>
+              <div class="stat-label">Brands Scaled</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-img-wrap">
+            <!-- Replace src with actual profile image path -->
+            <div class="hero-img-placeholder">
+              <img src="./images/pp.PNG" alt="" />
+              <!-- <i class="fa-regular fa-user"></i> -->
+              <!-- <span style="font-size:0.9rem; opacity:0.5;">Profile Photo</span> -->
+            </div>
+          </div>
+          <div class="hero-badge">
+            <div class="dot"></div>
+            <div>
+              <strong>5.31x</strong>
+              <span>Avg. ROAS Delivered</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROBLEMS -->
+    <section class="problems" id="problems">
+      <div class="section-inner">
+        <p class="section-label">The Problem</p>
+        <h2 class="section-title">
+          Is Your Meta Ads Strategy Holding You Back?
+        </h2>
+        <p class="section-sub">
+          Most eCommerce brands struggle with Meta advertising. Sound familiar?
+        </p>
+        <div class="problems-grid">
+          <div class="problem-card">
+            <div class="problem-icon">
+              <i class="fa-solid fa-fire-flame-curved"></i>
+            </div>
+            <h4>Wasting Ad Budget</h4>
+            <p>
+              Campaigns burning through cash without delivering meaningful
+              conversions or real revenue.
+            </p>
+          </div>
+          <div class="problem-card">
+            <div class="problem-icon">
+              <i class="fa-solid fa-crosshairs"></i>
+            </div>
+            <h4>Poor Targeting</h4>
+            <p>
+              Ads reaching the wrong audience, causing low engagement and wasted
+              impressions.
+            </p>
+          </div>
+          <div class="problem-card">
+            <div class="problem-icon">
+              <i class="fa-solid fa-chart-line-down"></i>
+            </div>
+            <h4>Declining ROAS</h4>
+            <p>
+              Return on ad spend keeps dropping — harder to justify your
+              marketing investment.
+            </p>
+          </div>
+          <div class="problem-card">
+            <div class="problem-icon">
+              <i class="fa-solid fa-eye-slash"></i>
+            </div>
+            <h4>No Clear Data</h4>
+            <p>
+              You can't identify what's working, making it impossible to
+              optimize effectively.
+            </p>
+          </div>
+          <div class="problem-card">
+            <div class="problem-icon">
+              <i class="fa-solid fa-arrows-up-to-line"></i>
+            </div>
+            <h4>Scaling Struggles</h4>
+            <p>
+              Every time you try to scale, cost per acquisition skyrockets and
+              profits disappear.
+            </p>
+          </div>
+          <div class="problem-card">
+            <div class="problem-icon"><i class="fa-solid fa-repeat"></i></div>
+            <h4>No Testing Structure</h4>
+            <p>
+              No framework to systematically identify winning creatives,
+              audiences, or offers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section id="solution">
+      <div class="section-inner">
+        <p class="section-label">The Solution</p>
+        <h2 class="section-title">A Strategic Approach That Actually Works</h2>
+        <p class="section-sub">
+          My proven methodology transforms underperforming campaigns into
+          profit-generating machines.
+        </p>
+        <div class="solution-grid">
+          <div class="solution-card">
+            <div class="solution-icon">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <h4>Precision Targeting</h4>
+            <p>
+              Advanced audience research and segmentation to reach your ideal
+              customers at exactly the right moment.
+            </p>
+          </div>
+          <div class="solution-card">
+            <div class="solution-icon">
+              <i class="fa-solid fa-chart-bar"></i>
+            </div>
+            <h4>Data-Driven Optimization</h4>
+            <p>
+              Continuous testing and optimization based on real performance data
+              — never guesswork.
+            </p>
+          </div>
+          <div class="solution-card">
+            <div class="solution-icon"><i class="fa-solid fa-palette"></i></div>
+            <h4>Creative Strategy</h4>
+            <p>
+              Scroll-stopping ad creatives using the Andromeda Framework that
+              resonate and drive action.
+            </p>
+          </div>
+          <div class="solution-card">
+            <div class="solution-icon"><i class="fa-solid fa-filter"></i></div>
+            <h4>Full-Funnel Approach</h4>
+            <p>
+              Strategic campaigns that guide prospects from awareness to
+              purchase seamlessly.
+            </p>
+          </div>
+          <div class="solution-card">
+            <div class="solution-icon"><i class="fa-solid fa-rocket"></i></div>
+            <h4>Scaling Frameworks</h4>
+            <p>
+              Proven horizontal & vertical scaling methodologies to grow while
+              maintaining profitable ROAS.
+            </p>
+          </div>
+          <div class="solution-card">
+            <div class="solution-icon"><i class="fa-solid fa-robot"></i></div>
+            <h4>AI-Powered Insights</h4>
+            <p>
+              Claude AI integration for automated reporting, performance
+              tracking, and actionable campaign insights.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+      <div class="section-inner">
+        <p class="section-label">Skills & Expertise</p>
+        <h2 class="section-title">What I Bring to the Table</h2>
+        <div class="skills-grid">
+          <span class="skill-pill">Meta Ads Strategy</span>
+          <span class="skill-pill">Ad Account Audit</span>
+          <span class="skill-pill">Creative Strategy</span>
+          <span class="skill-pill">Audience Research</span>
+          <span class="skill-pill">Budget Planning & Allocation</span>
+          <span class="skill-pill">Horizontal & Vertical Scaling</span>
+          <span class="skill-pill">A/B Testing & Experimentation</span>
+          <span class="skill-pill">Conversion Rate Optimization</span>
+          <span class="skill-pill">Omni-channel Marketing</span>
+          <span class="skill-pill">AI Claude Integration</span>
+          <span class="skill-pill">Offer Creation</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASE STUDIES -->
+    <section id="case-studies">
+      <div class="section-inner">
+        <p class="section-label">Case Studies</p>
+        <h2 class="section-title">Real Results From Real Clients</h2>
+        <p class="section-sub">
+          See how eCommerce brands achieved breakthrough growth with structured
+          Meta advertising.
+        </p>
+
+        <div class="case-grid">
+          <!-- Case Study 1 -->
+          <div class="case-card">
+            <div class="case-num">Case Study 01</div>
+            <h3>Pakistan Fashion eCommerce Brand</h3>
+            <p class="case-tag">Women's Clothing · Online Store · Meta Ads</p>
+
+            <div class="case-section">
+              <div class="case-section-label">Overview</div>
+              <p>
+                A Pakistan-based fashion eCommerce brand selling clothing
+                through its online store, aiming to scale revenue profitably
+                through Meta Ads.
+              </p>
+            </div>
+
+            <div class="case-section">
+              <div class="case-section-label">The Challenge</div>
+              <p>
+                The brand was running ads but struggling with inconsistent and
+                unprofitable growth. No clear structure to identify winning
+                audiences, creatives, or scaling opportunities.
+              </p>
+            </div>
+
+            <div class="case-section">
+              <div class="case-section-label">Strategy & Execution</div>
+              <ul>
+                <li>
+                  Rebuilt campaign structure to separate testing and scaling
+                  phases
+                </li>
+                <li>
+                  Optimized campaigns specifically for purchase conversions
+                </li>
+                <li>
+                  Launched multiple creative variations (product-focused &
+                  lifestyle angles)
+                </li>
+                <li>
+                  Tested broad and interest-based audiences to identify scalable
+                  segments
+                </li>
+                <li>
+                  Reallocated budget toward high-performing campaigns to
+                  maximize ROAS
+                </li>
+                <li>
+                  Continuously optimized creatives and targeting based on
+                  real-time data
+                </li>
+              </ul>
+            </div>
+
+            <div class="case-section">
+              <div class="case-section-label">Results — March 2026</div>
+              <div class="results-grid">
+                <div class="result-item">
+                  <div class="result-num">491+</div>
+                  <div class="result-label">Total Purchases</div>
+                </div>
+                <div class="result-item">
+                  <div class="result-num">Rs. 4.27M+</div>
+                  <div class="result-label">Revenue Generated</div>
+                </div>
+                <div class="result-item">
+                  <div class="result-num">5.31x</div>
+                  <div class="result-label">ROAS</div>
+                </div>
+                <div class="result-item">
+                  <div class="result-num">0.89%</div>
+                  <div class="result-label">Conversion Rate</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="image1">
+            <img src="./images/111.PNG" alt="" />
+          </div>
+
+          <!-- Case Study 2 -->
+          <div class="case-card">
+            <div class="case-num">Case Study 02</div>
+            <h3>Modest Fashion Brand — Abayas & Women's Clothing</h3>
+            <p class="case-tag">Modest Fashion · Online Store · Meta Ads</p>
+
+            <div class="case-section">
+              <div class="case-section-label">Overview</div>
+              <p>
+                A Pakistan-based modest fashion eCommerce brand selling abayas
+                and women's clothing wanted to scale sales profitably while
+                building a consistent customer acquisition system.
+              </p>
+            </div>
+
+            <div class="case-section">
+              <div class="case-section-label">The Challenge</div>
+              <p>
+                Performance was inconsistent — unstable sales, increasing CPAs,
+                and no testing structure to identify which creatives or
+                audiences were driving results. Scaling budgets often hurt
+                performance.
+              </p>
+            </div>
+
+            <div class="case-section">
+              <div class="case-section-label">Strategy & Execution</div>
+              <ul>
+                <li>
+                  Restructured the account using the Andromeda Creative Strategy
+                </li>
+                <li>
+                  Introduced lifestyle visuals, product-focused videos, and
+                  UGC-style content
+                </li>
+                <li>
+                  Tested broad and interest-based audiences simultaneously
+                </li>
+                <li>
+                  Monitored performance closely and shifted budgets toward top
+                  performers
+                </li>
+                <li>
+                  Continuous creative optimization for efficiency and account
+                  stability
+                </li>
+              </ul>
+            </div>
+
+            <div class="case-section">
+              <div class="case-section-label">Results — November 2025</div>
+              <div class="results-grid">
+                <div class="result-item">
+                  <div class="result-num">510+</div>
+                  <div class="result-label">Total Purchases</div>
+                </div>
+                <div class="result-item">
+                  <div class="result-num">Rs. 2.42M+</div>
+                  <div class="result-label">Revenue Generated</div>
+                </div>
+                <div class="result-item">
+                  <div class="result-num">4.09x</div>
+                  <div class="result-label">ROAS</div>
+                </div>
+                <div class="result-item">
+                  <div class="result-num">2.35%</div>
+                  <div class="result-label">Purchase Ratio</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="image2">
+            <img src="./images/222.PNG" alt="" />
+          </div>
+          <!-- Case Study 3 -->
+          <div class="case-card">
+            <div class="case-num">Case Study 03</div>
+            <h3>Men's Unstitched Clothing — Seasonal Campaign</h3>
+            <p class="case-tag">
+              Men's Fashion · Online Store · Meta Ads · 7-Day Campaign
+            </p>
+
+            <div class="case-section">
+              <div class="case-section-label">Overview</div>
+              <p>
+                A Pakistan-based men's unstitched clothing brand wanted to scale
+                online sales profitably through Meta Ads during a high-demand
+                shopping period.
+              </p>
+            </div>
+
+            <div class="case-section">
+              <div class="case-section-label">The Challenge</div>
+              <p>
+                Inconsistent sales, rising acquisition costs, and weak creative
+                performance. No proper scaling structure to maintain profitable
+                growth during peak periods.
+              </p>
+            </div>
+
+            <div class="case-section">
+              <div class="case-section-label">Strategy & Execution</div>
+              <ul>
+                <li>
+                  Restructured using a testing and scaling framework focused on
+                  purchases
+                </li>
+                <li>
+                  Applied Andromeda Creative Strategy with premium
+                  fabric-focused creatives
+                </li>
+                <li>
+                  Tested lifestyle visuals, close-up product videos, and
+                  seasonal messaging
+                </li>
+                <li>
+                  Continuously reallocated budgets toward high-performing
+                  campaigns
+                </li>
+                <li>
+                  Real-time optimization of creatives and targeting throughout
+                  the campaign
+                </li>
+              </ul>
+            </div>
+
+            <div class="case-section">
+              <div class="case-section-label">
+                Results — February 2026 (7 Days Only)
+              </div>
+              <div class="results-grid">
+                <div class="result-item">
+                  <div class="result-num">277+</div>
+                  <div class="result-label">Purchases</div>
+                </div>
+                <div class="result-item">
+                  <div class="result-num">Rs. 1.08M+</div>
+                  <div class="result-label">Revenue Generated</div>
+                </div>
+                <div class="result-item">
+                  <div class="result-num">4.08x</div>
+                  <div class="result-label">ROAS</div>
+                </div>
+                <div class="result-item">
+                  <div class="result-num">2.25%</div>
+                  <div class="result-label">Purchase Ratio</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="image3">
+            <img src="./images/333.PNG" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="experience" id="experience">
+      <div class="section-inner">
+        <p class="section-label">Work Experience</p>
+        <h2 class="section-title">Professional Journey</h2>
+        <div class="exp-list">
+          <div class="exp-card">
+            <div class="exp-header">
+              <div class="exp-title">
+                Media Buyer · <span class="exp-company">VisionX</span>
+              </div>
+              <span class="exp-date">Nov 2025 – May 2026</span>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--muted)">
+              Worked with local eCommerce brands to scale revenue through
+              data-driven Meta Ads campaigns.
+            </p>
+            <ul>
+              <li>
+                Managed and optimized Meta Ads campaigns for multiple eCommerce
+                brands, focusing on increasing ROAS, conversions, and overall
+                campaign performance.
+              </li>
+              <li>
+                Developed and executed creative strategies by analyzing audience
+                behavior, market trends, and ad performance to create
+                high-converting campaigns.
+              </li>
+              <li>
+                Performed audience research, retargeting setup, A/B testing, and
+                funnel optimization to improve customer acquisition and reduce
+                CPA.
+              </li>
+              <li>
+                Utilized AI tools for automated reporting, performance tracking,
+                data analysis, and generating actionable campaign insights.
+              </li>
+            </ul>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-header">
+              <div class="exp-title">
+                Media Buyer ·
+                <span class="exp-company">Digital Techsforge</span>
+              </div>
+              <span class="exp-date">Jun 2024 – Jul 2025</span>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--muted)">
+              Worked with eCommerce, service-based, and local businesses to
+              scale revenue through high-converting funnels and ad strategies.
+            </p>
+            <ul>
+              <li>
+                Optimized sales funnels to improve conversion rates and enhance
+                customer journey performance.
+              </li>
+              <li>
+                Reduced customer acquisition costs through precise targeting and
+                continuous A/B testing.
+              </li>
+              <li>
+                Collaborated with creative teams to develop high-converting ad
+                creatives and product pages.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="about-inner">
+        <div class="about-img-wrap">
+          <!-- Replace with actual image: <img src="profile.jpg" alt="Arsalan Ali"> -->
+          <!-- <i class="fa-regular fa-user placeholder-icon"></i> -->
+          <img src="./images/pp.PNG" alt="" />
+        </div>
+        <div class="about-content">
+          <p class="section-label">About Me</p>
+          <h2 class="section-title">Hi, I'm Arsalan Ali</h2>
+          <p>
+            As a Performance Marketer and Meta Ads strategist based in Karachi,
+            Pakistan, I specialize in turning data-driven advertising into
+            measurable eCommerce results. I work closely with brands to help
+            them build consistent, scalable revenue through structured Meta Ads
+            systems.
+          </p>
+          <p>
+            By building smart testing frameworks, high-converting creative
+            strategies, and performance-based scaling systems, I make sure every
+            campaign drives real growth — not vanity metrics.
+          </p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <div class="stat-num">$100K+</div>
+              <div class="stat-label">Ad Spend</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">14+</div>
+              <div class="stat-label">Brands Scaled</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">4x+</div>
+              <div class="stat-label">Avg. ROAS</div>
+            </div>
+          </div>
+          <a href="#contact" class="btn-primary" style="display: inline-flex"
+            ><i class="fa-brands fa-whatsapp"></i> Let's Work Together</a
+          >
+          <div class="socials">
+            <a
+              href="https://www.facebook.com/arsalanali2"
+              target="_blank"
+              class="social-btn"
+              title="Facebook"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/arsalanaliecom/"
+              target="_blank"
+              class="social-btn"
+              title="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.youtube.com/@arsalanaliecom"
+              target="_blank"
+              class="social-btn"
+              title="YouTube"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/arsalanaliecom/"
+              target="_blank"
+              class="social-btn"
+              title="LinkedIn"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+            <a
+              href="https://wa.me/923104989720"
+              target="_blank"
+              class="social-btn"
+              title="WhatsApp"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="section-inner">
+        <p class="section-label">Get Started</p>
+        <h2 class="section-title">Ready To Scale Your eCommerce Brand?</h2>
+        <p class="section-sub">
+          Book a free strategy session. I'll personally review your business and
+          show you how we can drive growth.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <div>
+                <div class="contact-info-label">WhatsApp</div>
+                <a href="https://wa.me/923104989720" class="contact-info-val"
+                  >+92 310 4989720</a
+                >
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <div class="contact-info-label">Email</div>
+                <a
+                  href="mailto:arsalanaliofficial1@gmail.com"
+                  class="contact-info-val"
+                  >arsalanaliofficial1@gmail.com</a
+                >
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <div class="contact-info-label">Phone</div>
+                <a href="tel:+923104989720" class="contact-info-val"
+                  >+92 310 4989720</a
+                >
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <div class="contact-info-label">Location</div>
+                <span class="contact-info-val">Karachi, Pakistan</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 2rem; display: flex; gap: 0.75rem">
+              <a
+                href="https://www.facebook.com/arsalanali2"
+                target="_blank"
+                style="
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  background: rgba(255, 255, 255, 0.15);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: #fff;
+                  font-size: 1rem;
+                  text-decoration: none;
+                  transition: background 0.2s;
+                "
+                onmouseover="this.style.background = 'rgba(255,255,255,0.25)'"
+                onmouseout="this.style.background = 'rgba(255,255,255,0.15)'"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/arsalanaliecom/"
+                target="_blank"
+                style="
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  background: rgba(255, 255, 255, 0.15);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: #fff;
+                  font-size: 1rem;
+                  text-decoration: none;
+                  transition: background 0.2s;
+                "
+                onmouseover="this.style.background = 'rgba(255,255,255,0.25)'"
+                onmouseout="this.style.background = 'rgba(255,255,255,0.15)'"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/@arsalanaliecom"
+                target="_blank"
+                style="
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  background: rgba(255, 255, 255, 0.15);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: #fff;
+                  font-size: 1rem;
+                  text-decoration: none;
+                  transition: background 0.2s;
+                "
+                onmouseover="this.style.background = 'rgba(255,255,255,0.25)'"
+                onmouseout="this.style.background = 'rgba(255,255,255,0.15)'"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/arsalanaliecom/"
+                target="_blank"
+                style="
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  background: rgba(255, 255, 255, 0.15);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: #fff;
+                  font-size: 1rem;
+                  text-decoration: none;
+                  transition: background 0.2s;
+                "
+                onmouseover="this.style.background = 'rgba(255,255,255,0.25)'"
+                onmouseout="this.style.background = 'rgba(255,255,255,0.15)'"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" placeholder="Ahmed" />
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" placeholder="Khan" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="you@example.com" />
+            </div>
+            <div class="form-group">
+              <label>WhatsApp Number</label>
+              <input type="tel" placeholder="+92 300 0000000" />
+            </div>
+            <div class="form-group">
+              <label>Business Type</label>
+              <select>
+                <option value="">Select your business type</option>
+                <option>eCommerce</option>
+                <option>Fashion Brand</option>
+                <option>Service Business</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Monthly Ad Budget</label>
+              <select>
+                <option value="">Select budget range</option>
+                <option>Rs. 0 – 50,000</option>
+                <option>Rs. 50,000 – 200,000</option>
+                <option>Rs. 200,000 – 500,000</option>
+                <option>Rs. 500,000+</option>
+              </select>
+            </div>
+            <button
+              class="btn-white"
+              onclick="
+                alert(
+                  'Thank you! Arsalan will reach out to you on WhatsApp shortly.',
+                )
+              "
+            >
+              Book Free Strategy Session →
+            </button>
+            <p
+              style="
+                font-size: 0.78rem;
+                opacity: 0.6;
+                margin-top: 0.75rem;
+                text-align: center;
+              "
+            >
+              No spam, ever. 100% free consultation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <span class="footer-logo">Arsalan Ali</span>
+        <span>© 2026 Arsalan Ali. All rights reserved.</span>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/arsalanali2" target="_blank"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a href="https://www.instagram.com/arsalanaliecom/" target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="https://www.youtube.com/@arsalanaliecom" target="_blank"
+            ><i class="fa-brands fa-youtube"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/arsalanaliecom/" target="_blank"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+          <a href="https://wa.me/923104989720" target="_blank"
+            ><i class="fa-brands fa-whatsapp"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
